@@ -18,7 +18,9 @@ class STFaceView: UIView {
     var color: UIColor = .green
     
     @IBInspectable
-    var scale: CGFloat = 0.6
+    var scale: CGFloat = 0.6 {
+        didSet{setNeedsDisplay()}//当值改变时, 实时渲染UI(重新绘制图形)
+    }
     
     //该全局的变量就全局化
     @IBInspectable
@@ -29,6 +31,17 @@ class STFaceView: UIView {
     
     @IBInspectable
     var lineWith: CGFloat = 5.0
+    
+    //MARK:手势(3),参数是:手势. 执行的内容是:判断状态+UI渲染
+    @objc func changeScale(byReactingTo pinchRecognizer: UIPinchGestureRecognizer){
+        switch pinchRecognizer.state {
+        case .changed, .ended:
+            scale *= pinchRecognizer.scale
+            pinchRecognizer.scale = 1
+        default:
+            break
+        }
+    }
     
     
     

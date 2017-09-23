@@ -13,6 +13,8 @@ class STFaceViewController: UIViewController {
 
     @IBOutlet weak var faceView: STFaceView!{
         didSet {
+            let pinRecognizer = UIPinchGestureRecognizer(target: faceView, action: #selector(STFaceView.changeScale(byReactingTo:)))
+            faceView.addGestureRecognizer(pinRecognizer)
             updateUI()
         }
     }
