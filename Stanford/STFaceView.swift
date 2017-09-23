@@ -8,6 +8,8 @@
 
 import UIKit
 
+//MARK: VVV
+
 //MARK:经过IBDesignable描述之后, 可以在board中的, attr栏进行天界(不用run)
 @IBDesignable
 class STFaceView: UIView {
