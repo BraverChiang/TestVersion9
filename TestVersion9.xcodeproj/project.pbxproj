@@ -46,8 +46,8 @@
 		4C2D88431F766F47003A0B4B /* Stanford */ = {
 			isa = PBXGroup;
 			children = (
-				4C2D883F1F76602F003A0B4B /* STFaceView.swift */,
 				4C2D88411F76620D003A0B4B /* STFaceViewController.swift */,
+				4C2D883F1F76602F003A0B4B /* STFaceView.swift */,
 			);
 			path = Stanford;
 			sourceTree = "<group>";

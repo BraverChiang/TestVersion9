@@ -14,6 +14,9 @@ class STFaceView: UIView {
     var scale: CGFloat = 0.6
     //该全局的变量就全局化
     var eyesOpen: Bool = false
+    var mouthCurvature: Double = 1.0//1是喜, -1是悲
+    
+    
     private var skullRadius: CGFloat{
         //return 表示初始化一个默认值. 在Swift语法中:在get里面, 省略get
         return min(bounds.size.width, bounds.size.height)/2 * scale
@@ -60,7 +63,7 @@ class STFaceView: UIView {
             eyePath.lineWidth = 5.0
             return eyePath
         } else{
-            //MARK:画线
+            //MARK:画直线
             eyePath =  UIBezierPath()
             eyePath.move(to: CGPoint(x: eyeCenter.x-eyeRadius, y: eyeCenter.y))
             eyePath.addLine(to: CGPoint(x: eyeCenter.x+eyeRadius, y: eyeCenter.y))
@@ -83,11 +86,25 @@ class STFaceView: UIView {
             height: mouthHeight
         )
         //MARK:画矩形
-        let mouthPath = UIBezierPath(rect: mouthRect)
+//        let mouthPath = UIBezierPath(rect: mouthRect)
+//        return mouthPath
+        
+        //MARK:画曲线(经过4点)
+        let smileOffset = CGFloat(mouthCurvature) * mouthRect.height
+        let startPoint = CGPoint(x: mouthRect.minX, y: mouthRect.midY)
+        let endPoint = CGPoint(x: mouthRect.maxX, y: mouthRect.midY)
+        let cp1 = CGPoint(x: startPoint.x + mouthRect.width / 3, y: startPoint.y + smileOffset)
+        let cp2 = CGPoint(x: endPoint.x - mouthRect.width / 3, y: startPoint.y + smileOffset)
+        
+        let mouthPath = UIBezierPath()
+        mouthPath.move(to: startPoint)
+        mouthPath.addCurve(to: endPoint, controlPoint1: cp1, controlPoint2: cp2)
+        mouthPath.lineWidth = 3.0
         return mouthPath
         
-        
     }
+    
+    
     
     //MARK:画面部边框
     private func pathForSkull()  -> UIBezierPath{
