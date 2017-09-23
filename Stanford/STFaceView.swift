@@ -11,7 +11,7 @@ import UIKit
 class STFaceView: UIView {
     
     
-    var scale: CGFloat = 0.9
+    var scale: CGFloat = 0.6
     //该全局的变量就全局化
     private var skullRadius: CGFloat{
         //return 表示初始化一个默认值
@@ -33,7 +33,7 @@ class STFaceView: UIView {
 
     override func draw(_ rect: CGRect) {
         //边框颜色
-        UIColor.blue.set()
+        UIColor.green.set()
         pathForSkull().stroke()
     }
  

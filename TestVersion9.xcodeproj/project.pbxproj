@@ -43,10 +43,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C2D88431F766F47003A0B4B /* Stanford */ = {
+			isa = PBXGroup;
+			children = (
+				4C2D883F1F76602F003A0B4B /* STFaceView.swift */,
+				4C2D88411F76620D003A0B4B /* STFaceViewController.swift */,
+			);
+			path = Stanford;
+			sourceTree = "<group>";
+		};
+		4C2D88441F766F76003A0B4B /* Support APP */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB1BF81F7200EF0058C240 /* Assets.xcassets */,
+				4CEB1BFA1F7200EF0058C240 /* LaunchScreen.storyboard */,
+				4CEB1BEE1F7200EF0058C240 /* AppDelegate.swift */,
+				4CEB1BFD1F7200EF0058C240 /* Info.plist */,
+				4CEB1BF51F7200EF0058C240 /* TestVersion9.xcdatamodeld */,
+			);
+			path = "Support APP";
+			sourceTree = "<group>";
+		};
 		4CEB1BE21F7200EF0058C240 = {
 			isa = PBXGroup;
 			children = (
 				4CEB1BED1F7200EF0058C240 /* TestVersion9 */,
+				4C2D88431F766F47003A0B4B /* Stanford */,
+				4C2D88441F766F76003A0B4B /* Support APP */,
 				4CEB1BEC1F7200EF0058C240 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,16 +85,9 @@
 		4CEB1BED1F7200EF0058C240 /* TestVersion9 */ = {
 			isa = PBXGroup;
 			children = (
-				4CEB1BEE1F7200EF0058C240 /* AppDelegate.swift */,
+				4CEB1BF21F7200EF0058C240 /* Main.storyboard */,
 				4CEB1BF01F7200EF0058C240 /* ViewController.swift */,
 				4C2D883D1F7643B2003A0B4B /* SAFollowButton.swift */,
-				4CEB1BF21F7200EF0058C240 /* Main.storyboard */,
-				4CEB1BF81F7200EF0058C240 /* Assets.xcassets */,
-				4CEB1BFA1F7200EF0058C240 /* LaunchScreen.storyboard */,
-				4CEB1BFD1F7200EF0058C240 /* Info.plist */,
-				4CEB1BF51F7200EF0058C240 /* TestVersion9.xcdatamodeld */,
-				4C2D883F1F76602F003A0B4B /* STFaceView.swift */,
-				4C2D88411F76620D003A0B4B /* STFaceViewController.swift */,
 			);
 			path = TestVersion9;
 			sourceTree = "<group>";
