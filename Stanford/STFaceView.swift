@@ -55,16 +55,37 @@ class STFaceView: UIView {
         //画眼睛边框: 但是要分情况: if else眼睛分开和闭上
         let eyePath: UIBezierPath
         if eyesOpen {
+            //MARK:画圆
             eyePath = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: false)
             eyePath.lineWidth = 5.0
             return eyePath
         } else{
+            //MARK:画线
             eyePath =  UIBezierPath()
             eyePath.move(to: CGPoint(x: eyeCenter.x-eyeRadius, y: eyeCenter.y))
             eyePath.addLine(to: CGPoint(x: eyeCenter.x+eyeRadius, y: eyeCenter.y))
         }
         eyePath.lineWidth = 5.0
         return eyePath
+        
+    }
+    
+    //MARK:画嘴巴边框
+    private func pathForMouth() -> UIBezierPath {
+        let mouthWidth = skullRadius / Ratios.skullRadiusToMouthWith
+        let mouthHeight = skullRadius / Ratios.skullRadiusToMouthHeight
+        let mouthOffset = skullRadius / Ratios.skullRadiusToMouthOffset
+        
+        let mouthRect = CGRect(
+            x: skullCenter.x - mouthWidth/2,
+            y: skullCenter.y + mouthOffset,
+            width: mouthWidth,
+            height: mouthHeight
+        )
+        //MARK:画矩形
+        let mouthPath = UIBezierPath(rect: mouthRect)
+        return mouthPath
+        
         
     }
     
@@ -84,6 +105,7 @@ class STFaceView: UIView {
         pathForSkull().stroke()
         pathForEye(.left).stroke()
         pathForEye(.right).stroke()
+        pathForMouth().stroke()
     }
  
 
