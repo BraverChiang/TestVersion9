@@ -19,12 +19,14 @@ struct FacialExpression{
     }
     
     enum Mouth: Int{
+        //MARK:Enum中的类型case
         case frown
         case smirk
         case neutral
         case grin
         case smile
         
+        //MARK: Enum中的属性var. 一般是修改"rawValue(相当于数组的下标)",从而达到修改"类型case"的目的
         var sadder: Mouth{
             return Mouth(rawValue: rawValue-1) ?? .frown
         }
