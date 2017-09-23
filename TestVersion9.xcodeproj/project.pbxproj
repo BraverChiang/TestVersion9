@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2D883E1F7643B2003A0B4B /* SAFollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D883D1F7643B2003A0B4B /* SAFollowButton.swift */; };
+		4C2D88401F76602F003A0B4B /* STFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D883F1F76602F003A0B4B /* STFaceView.swift */; };
+		4C2D88421F76620D003A0B4B /* STFaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2D88411F76620D003A0B4B /* STFaceViewController.swift */; };
 		4CEB1BEF1F7200EF0058C240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB1BEE1F7200EF0058C240 /* AppDelegate.swift */; };
 		4CEB1BF11F7200EF0058C240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB1BF01F7200EF0058C240 /* ViewController.swift */; };
 		4CEB1BF41F7200EF0058C240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB1BF21F7200EF0058C240 /* Main.storyboard */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C2D883D1F7643B2003A0B4B /* SAFollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAFollowButton.swift; sourceTree = "<group>"; };
+		4C2D883F1F76602F003A0B4B /* STFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFaceView.swift; sourceTree = "<group>"; };
+		4C2D88411F76620D003A0B4B /* STFaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STFaceViewController.swift; sourceTree = "<group>"; };
 		4CEB1BEB1F7200EF0058C240 /* TestVersion9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestVersion9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEB1BEE1F7200EF0058C240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEB1BF01F7200EF0058C240 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,11 +64,14 @@
 			children = (
 				4CEB1BEE1F7200EF0058C240 /* AppDelegate.swift */,
 				4CEB1BF01F7200EF0058C240 /* ViewController.swift */,
+				4C2D883D1F7643B2003A0B4B /* SAFollowButton.swift */,
 				4CEB1BF21F7200EF0058C240 /* Main.storyboard */,
 				4CEB1BF81F7200EF0058C240 /* Assets.xcassets */,
 				4CEB1BFA1F7200EF0058C240 /* LaunchScreen.storyboard */,
 				4CEB1BFD1F7200EF0058C240 /* Info.plist */,
 				4CEB1BF51F7200EF0058C240 /* TestVersion9.xcdatamodeld */,
+				4C2D883F1F76602F003A0B4B /* STFaceView.swift */,
+				4C2D88411F76620D003A0B4B /* STFaceViewController.swift */,
 			);
 			path = TestVersion9;
 			sourceTree = "<group>";
@@ -139,8 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2D88421F76620D003A0B4B /* STFaceViewController.swift in Sources */,
 				4CEB1BF71F7200EF0058C240 /* TestVersion9.xcdatamodeld in Sources */,
 				4CEB1BF11F7200EF0058C240 /* ViewController.swift in Sources */,
+				4C2D883E1F7643B2003A0B4B /* SAFollowButton.swift in Sources */,
+				4C2D88401F76602F003A0B4B /* STFaceView.swift in Sources */,
 				4CEB1BEF1F7200EF0058C240 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
