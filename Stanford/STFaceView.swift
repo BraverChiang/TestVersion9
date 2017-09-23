@@ -8,13 +8,26 @@
 
 import UIKit
 
+//MARK:经过IBDesignable描述之后, 可以在board中的, attr栏进行天界(不用run)
+@IBDesignable
 class STFaceView: UIView {
     
+    @IBInspectable
+    var color: UIColor = .green
     
+    @IBInspectable
     var scale: CGFloat = 0.6
+    
     //该全局的变量就全局化
+    @IBInspectable
     var eyesOpen: Bool = false
+    
+    @IBInspectable
     var mouthCurvature: Double = 1.0//1是喜, -1是悲
+    
+    @IBInspectable
+    var lineWith: CGFloat = 5.0
+    
     
     
     private var skullRadius: CGFloat{
@@ -60,7 +73,7 @@ class STFaceView: UIView {
         if eyesOpen {
             //MARK:画圆
             eyePath = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: false)
-            eyePath.lineWidth = 5.0
+            eyePath.lineWidth = lineWith
             return eyePath
         } else{
             //MARK:画直线
@@ -68,7 +81,7 @@ class STFaceView: UIView {
             eyePath.move(to: CGPoint(x: eyeCenter.x-eyeRadius, y: eyeCenter.y))
             eyePath.addLine(to: CGPoint(x: eyeCenter.x+eyeRadius, y: eyeCenter.y))
         }
-        eyePath.lineWidth = 5.0
+        eyePath.lineWidth = lineWith
         return eyePath
         
     }
@@ -99,7 +112,7 @@ class STFaceView: UIView {
         let mouthPath = UIBezierPath()
         mouthPath.move(to: startPoint)
         mouthPath.addCurve(to: endPoint, controlPoint1: cp1, controlPoint2: cp2)
-        mouthPath.lineWidth = 3.0
+        mouthPath.lineWidth = lineWith
         return mouthPath
         
     }
@@ -111,14 +124,14 @@ class STFaceView: UIView {
         
         let path = UIBezierPath(arcCenter: skullCenter, radius: skullRadius, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: false)
         //边框宽度
-        path.lineWidth = 5.0
+        path.lineWidth = lineWith
         return path
     }
     
     //MARK: 核心方法draw
     override func draw(_ rect: CGRect) {
         //边框颜色
-        UIColor.green.set()
+        color.set()
         pathForSkull().stroke()
         pathForEye(.left).stroke()
         pathForEye(.right).stroke()

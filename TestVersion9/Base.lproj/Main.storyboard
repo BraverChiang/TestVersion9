@@ -57,6 +57,11 @@
                             <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="8mo-u9-uAh" customClass="STFaceView" customModule="TestVersion9" customModuleProvider="target">
                                 <rect key="frame" x="16" y="35" width="288" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
