@@ -15,22 +15,20 @@ import UIKit
 class STFaceView: UIView {
     
     @IBInspectable
-    var color: UIColor = .green
+    var color: UIColor = .green {  didSet{setNeedsDisplay()}  }
     
     @IBInspectable
-    var scale: CGFloat = 0.6 {
-        didSet{setNeedsDisplay()}//当值改变时, 实时渲染UI(重新绘制图形)
-    }
+    var scale: CGFloat = 0.6 {  didSet{setNeedsDisplay()}  } //当值改变时, 实时渲染UI(重新绘制图形)
     
     //该全局的变量就全局化
     @IBInspectable
-    var eyesOpen: Bool = false
+    var eyesOpen: Bool = false {  didSet{setNeedsDisplay()}  }
     
     @IBInspectable
-    var mouthCurvature: Double = 1.0//1是喜, -1是悲
+    var mouthCurvature: Double = 1.0 {  didSet{setNeedsDisplay()}  }  //1是喜, -1是悲
     
     @IBInspectable
-    var lineWith: CGFloat = 5.0
+    var lineWith: CGFloat = 5.0 {  didSet{setNeedsDisplay()}  }
     
     //MARK:手势(3),参数是:手势. 执行的内容是:判断状态+UI渲染
     @objc func changeScale(byReactingTo pinchRecognizer: UIPinchGestureRecognizer){

@@ -13,9 +13,24 @@ class STFaceViewController: UIViewController {
 
     @IBOutlet weak var faceView: STFaceView!{
         didSet {
+            //MARK: pin手势(1:定义手势,包括操作区域,和响应结果.2:响应区域,即View上绑定手势)
             let pinRecognizer = UIPinchGestureRecognizer(target: faceView, action: #selector(STFaceView.changeScale(byReactingTo:)))
             faceView.addGestureRecognizer(pinRecognizer)
+            //MARK: tap手势(1:定义手势,包括操作区域,和响应结果. [手势的次数/幅度]  2:响应区域,即View上绑定手势)
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(toggleEyes(byReactingTo:)))
+            tapRecognizer.numberOfTapsRequired = 2
+            faceView.addGestureRecognizer(tapRecognizer)
             updateUI()
+        }
+    }
+    
+    
+    @objc func toggleEyes(byReactingTo tapRecognizer: UITapGestureRecognizer){
+        if tapRecognizer.state == .ended{
+            //1修改Model层
+            let eyes: FacialExpression.Eyes = (expression.eyes == .closed) ? .open : .closed
+            //2把Model层的数据传回Controller层
+            expression = FacialExpression(eyes: eyes, mouth: expression.mouth)
         }
     }
     
