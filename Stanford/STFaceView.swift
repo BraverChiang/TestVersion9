@@ -13,6 +13,7 @@ class STFaceView: UIView {
     
     var scale: CGFloat = 0.6
     //该全局的变量就全局化
+    var eyesOpen: Bool = false
     private var skullRadius: CGFloat{
         //return 表示初始化一个默认值. 在Swift语法中:在get里面, 省略get
         return min(bounds.size.width, bounds.size.height)/2 * scale
@@ -50,8 +51,18 @@ class STFaceView: UIView {
         //眼睛半径:
         let eyeRadius = skullRadius / Ratios.skullRadiusToEyeRadius
         let eyeCenter = centerOfEye(eye)
-        //画眼睛边框
-        let eyePath = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: false)
+        
+        //画眼睛边框: 但是要分情况: if else眼睛分开和闭上
+        let eyePath: UIBezierPath
+        if eyesOpen {
+            eyePath = UIBezierPath(arcCenter: eyeCenter, radius: eyeRadius, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: false)
+            eyePath.lineWidth = 5.0
+            return eyePath
+        } else{
+            eyePath =  UIBezierPath()
+            eyePath.move(to: CGPoint(x: eyeCenter.x-eyeRadius, y: eyeCenter.y))
+            eyePath.addLine(to: CGPoint(x: eyeCenter.x+eyeRadius, y: eyeCenter.y))
+        }
         eyePath.lineWidth = 5.0
         return eyePath
         
