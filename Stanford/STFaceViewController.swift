@@ -10,6 +10,9 @@ import UIKit
 
 class STFaceViewController: UIViewController {
 
+    @IBOutlet weak var faceView: STFaceView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
