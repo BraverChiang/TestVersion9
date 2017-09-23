@@ -14,11 +14,11 @@ class STFaceView: UIView {
     var scale: CGFloat = 0.6
     //该全局的变量就全局化
     private var skullRadius: CGFloat{
-        //return 表示初始化一个默认值
+        //return 表示初始化一个默认值. 在Swift语法中:在get里面, 省略get
         return min(bounds.size.width, bounds.size.height)/2 * scale
     }
     private var skullCenter: CGPoint {
-        //return 表示初始化一个默认值
+        //return 表示初始化一个默认值. 在Swift语法中:在get里面, 省略get
         return CGPoint(x: bounds.midX, y: bounds.midY)
     }
     
