@@ -58,7 +58,6 @@
 				4CEB1BF81F7200EF0058C240 /* Assets.xcassets */,
 				4CEB1BFA1F7200EF0058C240 /* LaunchScreen.storyboard */,
 				4CEB1BEE1F7200EF0058C240 /* AppDelegate.swift */,
-				4CEB1BFD1F7200EF0058C240 /* Info.plist */,
 				4CEB1BF51F7200EF0058C240 /* TestVersion9.xcdatamodeld */,
 			);
 			path = "Support APP";
@@ -88,6 +87,7 @@
 				4CEB1BF21F7200EF0058C240 /* Main.storyboard */,
 				4CEB1BF01F7200EF0058C240 /* ViewController.swift */,
 				4C2D883D1F7643B2003A0B4B /* SAFollowButton.swift */,
+				4CEB1BFD1F7200EF0058C240 /* Info.plist */,
 			);
 			path = TestVersion9;
 			sourceTree = "<group>";
